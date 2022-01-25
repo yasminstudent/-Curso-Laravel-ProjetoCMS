@@ -84,11 +84,17 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return View | RedirectResponse
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+
+        if($user){
+            return view('admin.users.edit', ['user' => $user]);
+        }
+
+        return redirect()->route('users.index');
     }
 
     /**
