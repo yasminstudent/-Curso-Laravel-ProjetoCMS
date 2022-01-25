@@ -10,25 +10,35 @@
 @endsection
 
 @section('content')
-    <table class="table table-hover">
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Ações</th>
-        </tr>
+    <div class="card">
+        <h5 class="card-header text-white bg-dark">CMS</h5>
+        <div class="card-body">
+           <table class="table table-hover">
+               <thead>
+                   <tr>
+                       <th>ID</th>
+                       <th>Nome</th>
+                       <th>Email</th>
+                       <th>Ações</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   @foreach($users as $user)
+                       <tr>
+                           <td>{{$user->id}}</td>
+                           <td>{{$user->name}}</td>
+                           <td>{{$user->email}}</td>
+                           <td>
+                               <a href="{{route('users.edit', ['user' => $user->id])}}" class="btn btn-sm btn-info">Editar</a>
+                               <a href="{{route('users.destroy', ['user' => $user->id])}}" class="btn btn-sm btn-danger">Excluir</a>
+                           </td>
+                       </tr>
+                   @endforeach
+               </tbody>
+           </table>
+       </div>
+    </div>
 
-        @foreach($users as $user)
-            <tr>
-                <td>{{$user->id}}</td>
-                <td>{{$user->name}}</td>
-                <td>{{$user->email}}</td>
-                <td>
-                    <a href="{{route('users.edit', ['user' => $user->id])}}" class="btn btn-sm btn-info">Editar</a>
-                    <a href="{{route('users.destroy', ['user' => $user->id])}}" class="btn btn-sm btn-danger">Excluir</a>
-                </td>
-            </tr>
-        @endforeach
-    </table>
+    {{ $users->links()  }}
 @endsection
 

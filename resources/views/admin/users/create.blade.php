@@ -21,7 +21,7 @@
     @endif
 
     <div class="card w-75 ml-auto mr-auto">
-        <h5 class="card-header text-white bg-dark">Formulário de Cadastro</h5>
+        <h5 class="card-header text-white bg-dark">CMS</h5>
         <div class="card-body">
             <form action="{{route('users.store')}}" method="POST" class="form-horizontal">
                 @csrf
