@@ -13,6 +13,12 @@ USE App\User;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('can:edit-users');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +27,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::paginate(10);
-        return view('admin.users.index', ['users' => $users]);
+        $loggedID = Auth::id();
+        return view('admin.users.index', ['users' => $users, 'loggedID' => $loggedID]);
     }
 
     /**
