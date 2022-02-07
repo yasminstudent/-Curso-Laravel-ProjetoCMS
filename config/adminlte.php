@@ -238,25 +238,30 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Dashboard',
-            'url'         => 'painel',
-            'icon'        => 'far fa-fw fa-file',
+            'text' => 'Dashboard',
+            'url'  => 'painel',
+            'icon' => 'fas fa-fw fa-gamepad',
         ],
         [
-            'text'        => 'Minhas Páginas',
-            'url'         => 'painel/pages',
-            'icon'        => 'far fa-fw fa-file',
+            'text' => 'Minhas Páginas',
+            'url'  => 'painel/pages',
+            'icon' => 'fas fa-fw fa-file',
         ],
         [
-            'text'        => 'Meus Usuários',
-            'url'         => 'painel/users',
-            'icon'        => 'far fa-fw fa-file',
-            'can'         => 'edit-users'
+            'text' => 'Meus Usuários',
+            'url'  => 'painel/users',
+            'icon' => 'fas fa-fw fa-users',
+            'can'  => 'edit-users'
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Configurações'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Configurações do Site',
+            'url'  => 'painel/settings',
+            'icon' => 'fas fa-fw fa-cog',
+        ],
+        [
+            'text' => 'Meu Perfil',
+            'url'  => 'painel/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
     ],
